@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Olaiya Joseph Oniya — CV</title>
+    <meta name="description" content="Full-stack software engineer & founder. TagRides. Lagos, Nigeria." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #FAF8F5;
+        --ink: #0A0908;
+        --ink-soft: #2A2723;
+        --ink-mute: #5C5651;
+        --ink-dim: #8C8479;
+        --line: #E2DCD0;
+        --accent: #DC2626;
+        --serif: "Fraunces", "EB Garamond", serif;
+        --mono: "JetBrains Mono", ui-monospace, monospace;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      ul { margin: 0; padding: 0; list-style: none; }
+      a { color: inherit; text-decoration: none; }
+      strong { font-weight: 600; color: var(--ink); }
+      em { font-style: italic; }
+
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--mono);
+        font-size: 14px;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .page {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 56px 64px 80px;
+        position: relative;
+      }
+
+      /* Download bar — fixed top right, hidden in print */
+      .actions {
+        position: fixed; top: 16px; right: 16px;
+        display: flex; gap: 8px;
+        z-index: 10;
+      }
+      .actions a, .actions button {
+        font-family: var(--mono);
+        font-size: 12px;
+        letter-spacing: 0.05em;
+        background: var(--ink); color: var(--bg);
+        border: none;
+        padding: 10px 14px;
+        border-radius: 999px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background 0.2s ease;
+      }
+      .actions a:hover, .actions button:hover { background: var(--accent); }
+      .actions a.secondary { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+
+      .head {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 24px;
+        align-items: end;
+        padding-bottom: 32px;
+        border-bottom: 1px solid var(--ink);
+        margin-bottom: 36px;
+      }
+      .name {
+        font-family: var(--serif);
+        font-variation-settings: "opsz" 144, "SOFT" 30;
+        font-weight: 400;
+        font-size: 48px;
+        line-height: 1;
+        letter-spacing: -0.035em;
+        margin: 0 0 6px 0;
+      }
+      .title {
+        font-family: var(--mono);
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--ink-soft);
+        margin: 0 0 14px 0;
+      }
+      .contact {
+        font-size: 12px;
+        color: var(--ink-mute);
+        line-height: 1.8;
+      }
+      .contact a { color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 1px; }
+      .contact a:hover { border-color: var(--accent); color: var(--accent); }
+      .contact .sep { margin: 0 6px; color: var(--ink-dim); }
+
+      .location-block {
+        text-align: right;
+        font-family: var(--mono);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        color: var(--ink-mute);
+        line-height: 1.8;
+      }
+      .location-block .dot {
+        display: inline-block; width: 6px; height: 6px;
+        background: var(--accent); border-radius: 50%; vertical-align: middle;
+        margin-right: 6px;
+      }
+
+      .section {
+        margin-bottom: 32px;
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 28px;
+      }
+      .section h2 {
+        font-family: var(--mono);
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        color: var(--accent);
+        margin: 0;
+        padding-top: 2px;
+      }
+      .section .body { font-size: 14px; }
+      .section .body p { margin: 0 0 12px 0; }
+      .section .body p:last-child { margin-bottom: 0; }
+
+      /* Summary */
+      .summary p { line-height: 1.65; }
+
+      /* Programs table */
+      .programs {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .programs tr { border-bottom: 1px solid var(--line); }
+      .programs tr:last-child { border-bottom: none; }
+      .programs td {
+        padding: 10px 0;
+        font-size: 13px;
+        vertical-align: top;
+      }
+      .programs td:first-child {
+        width: 55%;
+        font-family: var(--serif);
+        font-variation-settings: "opsz" 24;
+        font-weight: 500;
+        font-size: 15px;
+      }
+      .programs td:last-child {
+        text-align: right;
+        color: var(--ink-mute);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      /* Experience entry */
+      .role {
+        margin-bottom: 28px;
+      }
+      .role:last-child { margin-bottom: 0; }
+      .role__head {
+        display: flex; justify-content: space-between; align-items: baseline;
+        margin-bottom: 4px;
+        gap: 12px;
+      }
+      .role__title {
+        font-family: var(--serif);
+        font-variation-settings: "opsz" 24, "SOFT" 30;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.2;
+        letter-spacing: -0.015em;
+        color: var(--ink);
+        margin: 0;
+      }
+      .role__title em { color: var(--ink-mute); font-style: normal; font-family: var(--mono); font-size: 13px; }
+      .role__when {
+        font-family: var(--mono);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--ink-mute);
+        white-space: nowrap;
+      }
+      .role__sub {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--ink-soft);
+        margin: 0 0 10px 0;
+      }
+      .role__body { font-size: 13.5px; color: var(--ink-soft); }
+      .role__body p { margin: 0 0 8px 0; }
+      .role__body ul { display: flex; flex-direction: column; gap: 7px; margin: 8px 0 0 0; padding-left: 0; }
+      .role__body li {
+        position: relative;
+        padding-left: 16px;
+        line-height: 1.5;
+      }
+      .role__body li::before {
+        content: "↳";
+        position: absolute; left: 0; top: 0;
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      /* Skills */
+      .skills__group {
+        margin-bottom: 14px;
+      }
+      .skills__group:last-child { margin-bottom: 0; }
+      .skills__group-label {
+        font-family: var(--mono);
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--ink);
+        margin-bottom: 4px;
+      }
+      .skills__group-body { color: var(--ink-soft); font-size: 13px; line-height: 1.55; }
+
+      /* Looking for */
+      .looking {
+        background: var(--ink); color: var(--bg);
+        padding: 20px 24px;
+        border-radius: 8px;
+        margin: 20px 0 0 0;
+      }
+      .looking h3 {
+        font-family: var(--mono);
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        color: var(--accent);
+        margin: 0 0 8px 0;
+      }
+      .looking p { margin: 0; font-size: 13px; line-height: 1.55; color: rgba(250, 248, 245, 0.86); }
+
+      .footnote {
+        margin-top: 32px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--ink-mute);
+        text-align: center;
+        font-style: italic;
+      }
+
+      /* ============ PRINT ============ */
+      @media print {
+        @page {
+          size: A4;
+          margin: 14mm 12mm;
+        }
+        body { background: white; }
+        .actions { display: none !important; }
+        .page { padding: 0; max-width: 100%; }
+        a { color: inherit !important; border-bottom: none !important; }
+        .section { grid-template-columns: 130px 1fr; margin-bottom: 22px; }
+        .role { margin-bottom: 20px; }
+        .name { font-size: 38px; }
+        .head { padding-bottom: 22px; margin-bottom: 28px; }
+        .looking { box-shadow: none; }
+      }
+
+      @media (max-width: 720px) {
+        .page { padding: 32px 24px 48px; }
+        .head { grid-template-columns: 1fr; }
+        .location-block { text-align: left; margin-top: 8px; }
+        .section { grid-template-columns: 1fr; gap: 8px; }
+        .section h2 { padding-top: 0; }
+        .name { font-size: 36px; }
+        .actions { top: 8px; right: 8px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="actions">
+      <a href="/" class="secondary">← Portfolio</a>
+      <button onclick="window.print()">Download PDF</button>
+    </div>
+
+    <div class="page">
+      <header class="head">
+        <div>
+          <h1 class="name">Olaiya Joseph Oniya</h1>
+          <p class="title">Full-Stack Software Engineer · Founder, Tag-Along Ltd</p>
+          <p class="contact">
+            <a href="mailto:oniya.olaiya@tagrider.com">oniya.olaiya@tagrider.com</a>
+            <span class="sep">·</span>
+            <a href="https://github.com/OlaiyaO" target="_blank" rel="noopener">github.com/OlaiyaO</a>
+            <span class="sep">·</span>
+            <a href="https://www.linkedin.com/in/oniya-joseph-3721b9186/" target="_blank" rel="noopener">linkedin/oniya-joseph</a>
+            <span class="sep">·</span>
+            <a href="https://tagrider.com" target="_blank" rel="noopener">tagrider.com</a>
+          </p>
+        </div>
+        <div class="location-block">
+          <div><span class="dot"></span>Available now</div>
+          <div>Lagos, Nigeria · Remote</div>
+        </div>
+      </header>
+
+      <!-- ============ SUMMARY ============ -->
+      <section class="section summary">
+        <h2>Summary</h2>
+        <div class="body">
+          <p>
+            Founder of <strong>Tag-Along Ltd (TagRides)</strong> — a Lagos-based ride-sharing platform built solo from infrastructure to mobile app. Production-grade distributed systems engineer working in <strong>Go, Flutter, and TypeScript</strong> across the full stack: 9 microservices, real-time MQTT location pipelines, payment integrations, native multi-platform clients, marketing sites, and AI infrastructure.
+          </p>
+          <p>
+            Currently selected for <strong>Microsoft for Startups Founders Hub</strong>, <strong>Google for Startups</strong>, and in active engagement with the <strong>AWS Startups</strong> team on cloud architecture and credit allocation. Tony Elumelu Foundation alumnus and ALX Software Engineering &amp; Ventures graduate. Available for senior contract engagements, AI/ML training data work, and high-trust freelance projects.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ PROGRAMS ============ -->
+      <section class="section">
+        <h2>Programs &amp; Recognition</h2>
+        <div class="body">
+          <table class="programs">
+            <tr><td>Microsoft for Startups — Founders Hub</td><td>Active member</td></tr>
+            <tr><td>Google for Startups</td><td>Program participant</td></tr>
+            <tr><td>AWS Startups</td><td>Architecture engagement · in process for AWS Activate credits</td></tr>
+            <tr><td>Tony Elumelu Foundation (TEF)</td><td>Entrepreneurship Programme alumnus</td></tr>
+            <tr><td>ALX Africa</td><td>Software Engineering · Backend · Ventures · alumnus</td></tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ EXPERIENCE ============ -->
+      <section class="section">
+        <h2>Experience</h2>
+        <div class="body">
+
+          <article class="role">
+            <header class="role__head">
+              <h3 class="role__title">Founder &amp; Lead Engineer <em>· Tag-Along Ltd (TagRides)</em></h3>
+              <span class="role__when">2025 — Present</span>
+            </header>
+            <p class="role__sub">Lagos · Solo build · Go · Flutter · Distributed systems · MQTT</p>
+            <div class="role__body">
+              <p>Lagos-targeted route-shared mobility platform — designed, built, and deployed solo across backend, mobile, web, and infrastructure.</p>
+              <ul>
+                <li>Architected <strong>9 production Go microservices</strong> behind a Kong gateway: <code>auth</code>, <code>driver</code>, <code>geolocation</code>, <code>orchestrator</code>, <code>notification</code>, <code>rating</code>, <code>wallet</code>, <code>analytics</code>, <code>admin</code> — plus an <code>init</code> bootstrap and a <code>simulator</code> for stress-testing the matching algorithm without live drivers.</li>
+                <li>Built <strong>real-time location pipelines</strong> on MQTT (EMQX) and Kafka, with Tile38 for geospatial proximity, PostGIS + OSRM + Valhalla for routing.</li>
+                <li>Engineered a <strong>clean-architecture Flutter app</strong> (Android, iOS, Web): 575 Dart files, 38 screens, BLoC state management, MQTT5 streaming, Google Maps with custom marker pipelines, Paystack payments, Firebase auth, Google Sign-In with a custom web platform-view shim.</li>
+                <li>Wrote a complete brand system (<code>BRAND.md</code>) — color tokens, type scale, lockups — codified across the Flutter theme and the Next.js 16 marketing site so app and web read as one product.</li>
+                <li>Delivered Lighthouse 90+ on the marketing site with Next.js 16, React 19, Tailwind 4, Motion v12, and Lottie.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="role">
+            <header class="role__head">
+              <h3 class="role__title">Solo Build — Tag-Along LLM Proxy <em>· ai.tagrider.com</em></h3>
+              <span class="role__when">2026 · 48-hour sprint</span>
+            </header>
+            <p class="role__sub">LiteLLM · Docker · Nginx · Let's Encrypt · Azure AI Foundry</p>
+            <div class="role__body">
+              <p>Multi-tenant LLM API gateway reselling Azure AI Foundry capacity through virtual keys.</p>
+              <ul>
+                <li>LiteLLM + Postgres in Docker, behind Nginx with automated Let's Encrypt rotation. Public HTTPS endpoint live at <code>ai.tagrider.com</code>.</li>
+                <li>Per-buyer virtual keys with model allowlists, daily-resetting budgets, and spend tracking across Anthropic and OpenAI families.</li>
+                <li>Diagnosed and patched upstream API edge cases at the nginx layer (header stripping for <code>anthropic-beta</code> values Foundry rejected) to maintain compatibility with Cline, Claude Code, and Cursor.</li>
+                <li>Two paying-prospect keys live within 48 hours of public launch.</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ============ SKILLS ============ -->
+      <section class="section">
+        <h2>Skills</h2>
+        <div class="body">
+          <div class="skills__group">
+            <div class="skills__group-label">Languages</div>
+            <div class="skills__group-body">Go (primary backend), Dart, TypeScript / JavaScript, Python, SQL, Bash.</div>
+          </div>
+          <div class="skills__group">
+            <div class="skills__group-label">Backend &amp; Infrastructure</div>
+            <div class="skills__group-body">Fiber, gRPC, REST. Kafka, RabbitMQ, MQTT (EMQX). Postgres, PostGIS, GORM, pgx, MySQL. Redis, Tile38. Kong gateway. Docker Compose, systemd. Nginx, Let's Encrypt, Cloudflare DNS.</div>
+          </div>
+          <div class="skills__group">
+            <div class="skills__group-label">Mobile</div>
+            <div class="skills__group-body">Flutter (clean architecture, BLoC, go_router). Platform-view interop for Web. Native iOS / Android pipelines. Firebase Auth + Cloud Messaging. Paystack SDK.</div>
+          </div>
+          <div class="skills__group">
+            <div class="skills__group-label">Web</div>
+            <div class="skills__group-body">Next.js 14 / 15 / 16. React 19. Tailwind 3 / 4. Motion / Framer Motion. Three.js, GSAP, Lenis. Lottie. ECharts-GL.</div>
+          </div>
+          <div class="skills__group">
+            <div class="skills__group-label">Integrations &amp; AI</div>
+            <div class="skills__group-body">Paystack, Stripe, Twilio, Mailgun, Cloudinary, Google Maps, OSRM, Valhalla. OpenAI, Anthropic, Azure AI Foundry, LiteLLM proxy.</div>
+          </div>
+          <div class="skills__group">
+            <div class="skills__group-label">Practice</div>
+            <div class="skills__group-body">Domain-driven design. End-to-end ownership: architecture → code → infra → deploy → observability. Solo shipping production systems on tight timelines.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ EDUCATION ============ -->
+      <section class="section">
+        <h2>Education</h2>
+        <div class="body">
+          <div class="role">
+            <header class="role__head">
+              <h3 class="role__title">Federal University of Technology, Minna (FUTMinna)</h3>
+            </header>
+            <p class="role__sub">Nigeria · Degree programme completed</p>
+          </div>
+          <div class="role">
+            <header class="role__head">
+              <h3 class="role__title">ALX Africa <em>· Software Engineering · Backend · Ventures</em></h3>
+            </header>
+          </div>
+          <div class="role">
+            <header class="role__head">
+              <h3 class="role__title">Tony Elumelu Foundation <em>· Entrepreneurship Programme</em></h3>
+            </header>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ LOOKING FOR ============ -->
+      <section class="section">
+        <h2>What I'm open to</h2>
+        <div class="body">
+          <div class="looking">
+            <h3>Currently available</h3>
+            <p>
+              Senior contract or full-time remote engineering engagements where a single engineer with depth in distributed systems, mobile, and infrastructure can outpace a coordinated team of specialists. Open to AI / ML training data work (Mercor, Outlier, Shipd), startup MVP builds (4–8 week sprints), and CTO-for-hire arrangements alongside continued TagRides leadership.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <p class="footnote">
+        References, code samples, and TagRides system architecture diagrams available on request. Last updated June 2026.
+      </p>
+    </div>
+  </body>
+</html>

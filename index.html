@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light" />
+
+    <title>Olaiya Joseph Oniya — Production-grade systems, in days.</title>
+    <meta
+      name="description"
+      content="Full-stack engineer. Distributed systems, real-time mobility, Flutter, Go. Builds production-grade software in a fraction of the typical timeline."
+    />
+    <meta name="author" content="Olaiya Joseph Oniya" />
+    <meta name="theme-color" content="#FAF8F5" />
+
+    <meta property="og:title" content="Olaiya Joseph Oniya — Production-grade systems, in days." />
+    <meta property="og:description" content="Full-stack engineer shipping distributed systems, real-time mobility, and Flutter apps fast." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://oniya.tagrider.com" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/styles.css?v=8" />
+
+    <!-- GSAP + ScrollTrigger for scroll choreography (non-commercial use is free) -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis — smooth scroll done right -->
+    <script defer src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  </head>
+  <body>
+    <!-- ============ LOADER ============ -->
+    <div class="loader" id="loader" aria-hidden="true">
+      <div class="loader__counter">
+        <span class="loader__count" id="loaderCount">000</span>
+        <span class="loader__pct">%</span>
+      </div>
+      <div class="loader__caption">Loading the workshop…</div>
+    </div>
+
+    <!-- ============ CUSTOM CURSOR — ring + dot + glow blob ============ -->
+    <div class="cursor-blob" id="cursorBlob" aria-hidden="true"></div>
+    <div class="cursor" id="cursor" aria-hidden="true"></div>
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+    <!-- ============ NAV ============ -->
+    <header class="nav" id="nav">
+      <a href="#top" class="nav__brand">
+        <span class="nav__mark">O</span>
+        <span class="nav__name">Olaiya Oniya</span>
+      </a>
+      <nav class="nav__links">
+        <a href="#work">Work</a>
+        <a href="#stack">Stack</a>
+        <a href="#approach">Approach</a>
+        <a href="#contact" class="nav__cta">Hire me <span aria-hidden="true">→</span></a>
+      </nav>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <!-- CSS-only hero backdrop — no WebGL, no canvas, no jank -->
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__halo"></div>
+        <svg class="hero__rings" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <defs>
+            <radialGradient id="ringFade" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#0A0908" stop-opacity="0"/>
+              <stop offset="60%" stop-color="#0A0908" stop-opacity="0.18"/>
+              <stop offset="100%" stop-color="#0A0908" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <g class="hero__ring-spin">
+            <ellipse cx="400" cy="400" rx="360" ry="120" fill="none" stroke="#DC2626" stroke-width="1.2" opacity="0.55" />
+            <ellipse cx="400" cy="400" rx="280" ry="92" fill="none" stroke="#0A0908" stroke-width="0.8" opacity="0.3" transform="rotate(8 400 400)" />
+            <ellipse cx="400" cy="400" rx="200" ry="64" fill="none" stroke="#0A0908" stroke-width="0.6" opacity="0.2" transform="rotate(-12 400 400)" />
+          </g>
+        </svg>
+      </div>
+
+      <div class="hero__inner">
+        <div class="hero__eyebrow">
+          <span class="dot dot--accent"></span>
+          <span>Available · Full-stack · Remote · Lagos, NG</span>
+        </div>
+
+        <h1 class="hero__title">
+          <span class="line"><span>Production</span></span>
+          <span class="line"><em>grade.</em></span>
+          <span class="line"><span>In</span> <span class="hero__num">48</span> <span>hours.</span></span>
+        </h1>
+
+        <p class="hero__sub">
+          I build the systems other engineers say take months.
+          Real-time mobility platforms. Distributed backends. Production
+          Flutter apps. LLM proxies. Whatever your fastest engineer would
+          ship, but shipped now.
+        </p>
+
+        <div class="hero__cta">
+          <a href="#work" class="btn btn--primary">
+            <span>See selected work</span>
+            <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="https://cal.com/olaiya-oniya/20-min-intro" target="_blank" rel="noopener" class="btn btn--ghost">
+            <span>Book a 20-min intro</span>
+            <span class="btn__arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="hero__meta">
+          <div class="meta__col">
+            <span class="meta__label">Building since</span>
+            <span class="meta__value">2019</span>
+          </div>
+          <div class="meta__col">
+            <span class="meta__label">Production systems</span>
+            <span class="meta__value">9 services live</span>
+          </div>
+          <div class="meta__col">
+            <span class="meta__label">Lines shipped, '26</span>
+            <span class="meta__value">~150,000</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CREDENTIAL BAND — "selected for" social proof ============ -->
+    <section class="creds" aria-label="Programs and recognition">
+      <div class="creds__inner">
+        <span class="creds__label">Selected for</span>
+        <div class="creds__rail">
+          <div class="cred">
+            <span class="cred__logo">⬡</span>
+            <div class="cred__txt">
+              <span class="cred__name">Microsoft for Startups</span>
+              <span class="cred__sub">Founders Hub member</span>
+            </div>
+          </div>
+          <div class="cred">
+            <span class="cred__logo">◴</span>
+            <div class="cred__txt">
+              <span class="cred__name">Google for Startups</span>
+              <span class="cred__sub">Program participant</span>
+            </div>
+          </div>
+          <div class="cred">
+            <span class="cred__logo">▲</span>
+            <div class="cred__txt">
+              <span class="cred__name">Tony Elumelu Foundation</span>
+              <span class="cred__sub">Entrepreneurship alumnus</span>
+            </div>
+          </div>
+          <div class="cred">
+            <span class="cred__logo">◇</span>
+            <div class="cred__txt">
+              <span class="cred__name">ALX</span>
+              <span class="cred__sub">Software Eng. + Backend + Ventures</span>
+            </div>
+          </div>
+          <div class="cred">
+            <span class="cred__logo">◊</span>
+            <div class="cred__txt">
+              <span class="cred__name">AWS Startups</span>
+              <span class="cred__sub">Active architecture engagement</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Go</span><span>·</span>
+        <span>Flutter</span><span>·</span>
+        <span>Distributed Systems</span><span>·</span>
+        <span>Kafka</span><span>·</span>
+        <span>MQTT</span><span>·</span>
+        <span>PostGIS</span><span>·</span>
+        <span>Kong</span><span>·</span>
+        <span>Microservices</span><span>·</span>
+        <span>Real-time Location</span><span>·</span>
+        <span>Docker</span><span>·</span>
+        <span>Linux</span><span>·</span>
+        <span>Nginx</span><span>·</span>
+        <span>Next.js</span><span>·</span>
+        <span>Tailwind</span><span>·</span>
+        <span>Go</span><span>·</span>
+        <span>Flutter</span><span>·</span>
+        <span>Distributed Systems</span><span>·</span>
+        <span>Kafka</span><span>·</span>
+        <span>MQTT</span><span>·</span>
+        <span>PostGIS</span><span>·</span>
+        <span>Kong</span><span>·</span>
+        <span>Microservices</span><span>·</span>
+        <span>Real-time Location</span><span>·</span>
+        <span>Docker</span><span>·</span>
+        <span>Linux</span><span>·</span>
+        <span>Nginx</span><span>·</span>
+        <span>Next.js</span><span>·</span>
+        <span>Tailwind</span><span>·</span>
+      </div>
+    </section>
+
+    <!-- ============ APPROACH ============ -->
+    <section class="approach" id="approach">
+      <div class="approach__inner">
+        <span class="eyebrow">
+          <span class="eyebrow__num">01</span>
+          <span class="eyebrow__label">Approach</span>
+        </span>
+
+        <h2 class="approach__title">
+          The work that wins
+          <em>doesn't look</em>
+          like the work other people ship.
+        </h2>
+
+        <div class="approach__body">
+          <p>
+            Most engineers ship features. I ship systems. The TagRides
+            backend isn't a Node monolith with a Postgres on the side —
+            it's <strong>9 Go microservices</strong>, MQTT over EMQX for
+            real-time location, Kafka for event streaming, Kong as the
+            gateway, PostGIS for routing, Tile38 for geospatial lookups.
+            All of it dockerised, observable, replayable, and built solo.
+          </p>
+          <p>
+            That kind of depth doesn't come from following tutorials.
+            It comes from owning every layer — auth, routing, payments,
+            push notifications, the matching algorithm, the simulator
+            that lets you test it without 200 drivers on the road. When
+            I tell a client I can ship their MVP in two weeks, what I
+            mean is: I've already built the harder version of their
+            problem. Yours is a remix.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT / PORTRAIT ============ -->
+    <section class="about" id="about">
+      <div class="about__inner">
+        <div class="about__portrait">
+          <img
+            src="/assets/headshot.jpg"
+            alt="Oniya Olaiya — full-stack engineer"
+            class="about__photo"
+            loading="lazy"
+            onerror="this.classList.add('is-fallback'); this.alt = 'Portrait coming soon';"
+          />
+          <div class="about__caption">
+            <span class="about__caption-label">Photo</span>
+            <span class="about__caption-text">Lagos, 2026</span>
+          </div>
+        </div>
+
+        <div class="about__body">
+          <span class="eyebrow">
+            <span class="eyebrow__num">/</span>
+            <span class="eyebrow__label">Who you're hiring</span>
+          </span>
+
+          <h2 class="about__title">
+            I'm Oniya. I build
+            <em>the whole thing</em> —
+            so you only have to hire one person.
+          </h2>
+
+          <div class="about__copy">
+            <p>
+              Most clients reach out thinking they need a team. They need
+              a backend engineer, a mobile dev, a DevOps person, someone
+              for infra, someone for the marketing site. Then they spend
+              two months coordinating four contractors and shipping nothing.
+            </p>
+            <p>
+              I do all of it. Backend in Go. Mobile in Flutter. Web in
+              Next.js. Infra on Docker + Nginx + Postgres. AI integrations
+              with LiteLLM and Foundry. Brand systems, design tokens,
+              landing pages, contracts. <strong>One person, one timeline,
+              one invoice.</strong>
+            </p>
+            <p>
+              That's not because I'm cheaper than a team. It's because
+              shipping <em>fast</em> requires somebody who can hold the
+              entire system in their head at once. That's the part that's
+              actually rare — and that's the part I do.
+            </p>
+          </div>
+
+          <div class="about__pact">
+            <span class="pact__label">The pact</span>
+            <ul class="pact__list">
+              <li>
+                <span class="pact__bullet">↳</span>
+                A first working version of your product, on a real URL,
+                within <strong>7 days</strong> of kick-off.
+              </li>
+              <li>
+                <span class="pact__bullet">↳</span>
+                Daily progress updates. No "I'll have something next week."
+              </li>
+              <li>
+                <span class="pact__bullet">↳</span>
+                A free 20-minute intro call before any commitment.
+                If we're not a fit, we're not a fit.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SELECTED WORK ============ -->
+    <section class="work" id="work">
+      <div class="work__intro">
+        <span class="eyebrow">
+          <span class="eyebrow__num">02</span>
+          <span class="eyebrow__label">Selected work</span>
+        </span>
+        <h2 class="work__heading">
+          Four <em>different</em> kinds of hard problem.
+        </h2>
+        <p class="work__lede">
+          Distributed systems. Native mobile. Editorial web. Production AI infrastructure. Each shipped end-to-end.
+        </p>
+      </div>
+
+      <!-- PROJECT 1: TagRides -->
+      <article class="proj proj--01">
+        <div class="proj__meta">
+          <span class="proj__num">/ 01</span>
+          <span class="proj__year">2025–26</span>
+        </div>
+        <div class="proj__body">
+          <h3 class="proj__title">TagRides — the platform.</h3>
+          <p class="proj__lede">
+            A production-grade ride-sharing backend for Lagos. Built solo.
+          </p>
+          <p class="proj__detail">
+            Nine Go microservices behind a Kong gateway. Real-time driver
+            and rider location pipelines over MQTT (EMQX) and Kafka.
+            PostGIS routing with OSRM and Valhalla integration. Tile38 for
+            geospatial proximity. Paystack payments. Twilio + Mailgun for
+            comms. Firebase auth. A simulator service that lets you stress
+            the matching algorithm without putting a single car on Lekki-Epe.
+          </p>
+          <ul class="proj__stack">
+            <li>Go 1.25</li><li>Fiber</li><li>GORM</li>
+            <li>Kafka</li><li>MQTT / EMQX</li><li>Kong</li>
+            <li>PostGIS</li><li>Tile38</li><li>Valhalla</li>
+            <li>OSRM</li><li>Docker Compose</li><li>gRPC</li>
+          </ul>
+        </div>
+        <div class="proj__visual" data-visual="01">
+          <div class="visual__grid" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span>
+          </div>
+          <span class="visual__caption">9 services · 1 engineer · 1 city</span>
+        </div>
+      </article>
+
+      <!-- PROJECT 2: Flutter app -->
+      <article class="proj proj--02">
+        <div class="proj__meta">
+          <span class="proj__num">/ 02</span>
+          <span class="proj__year">2025–26</span>
+        </div>
+        <div class="proj__body">
+          <h3 class="proj__title">TagRides — the app.</h3>
+          <p class="proj__lede">
+            Native Flutter, web-first, clean architecture, real-time map.
+          </p>
+          <p class="proj__detail">
+            Domain / infrastructure / application / presentation —
+            four-layer architecture across 575 Dart files and 38 screens.
+            BLoC state management. MQTT5 streaming for live driver
+            positions. Google Maps + custom marker pipelines. Geolocator,
+            secure storage, Paystack SDK, Pinput OTP, Firebase auth,
+            Google Sign-In with web platform-view shim. Ships to Android,
+            iOS, and Web from a single codebase.
+          </p>
+          <ul class="proj__stack">
+            <li>Flutter 3.8+</li><li>Dart</li><li>BLoC</li>
+            <li>MQTT5</li><li>Google Maps</li><li>Firebase Auth</li>
+            <li>Paystack</li><li>Dio</li><li>go_router</li>
+            <li>Lottie</li><li>Web platform views</li>
+          </ul>
+        </div>
+        <div class="proj__visual" data-visual="02">
+          <div class="visual__phone" aria-hidden="true">
+            <div class="phone__notch"></div>
+            <div class="phone__screen">
+              <div class="phone__route"></div>
+              <div class="phone__pin phone__pin--start"></div>
+              <div class="phone__pin phone__pin--end"></div>
+            </div>
+          </div>
+          <span class="visual__caption">575 Dart files · 38 screens · 1 codebase</span>
+        </div>
+      </article>
+
+      <!-- PROJECT 3: LLM proxy -->
+      <article class="proj proj--03">
+        <div class="proj__meta">
+          <span class="proj__num">/ 03</span>
+          <span class="proj__year">2026</span>
+        </div>
+        <div class="proj__body">
+          <h3 class="proj__title">LLM proxy — production in 48 hours.</h3>
+          <p class="proj__lede">
+            A multi-tenant LLM gateway with virtual keys, per-user budgets, and TLS-terminated public ingress.
+          </p>
+          <p class="proj__detail">
+            LiteLLM in Docker behind nginx with Let's Encrypt automation.
+            Per-buyer virtual keys (LiteLLM) with model allowlists and
+            daily-resetting budgets. Postgres-backed spend tracking. Stripped
+            client beta headers at the nginx layer to keep upstream
+            Azure AI Foundry happy. From zero to public HTTPS endpoint
+            <em>ai.tagrider.com</em> with two paying-prospect keys live —
+            48 hours of work.
+          </p>
+          <ul class="proj__stack">
+            <li>LiteLLM</li><li>Docker Compose</li><li>Postgres 16</li>
+            <li>Nginx</li><li>Let's Encrypt / certbot</li>
+            <li>Cloudflare DNS</li><li>Azure AI Foundry</li>
+          </ul>
+        </div>
+        <div class="proj__visual" data-visual="03">
+          <div class="visual__terminal" aria-hidden="true">
+            <div class="term__bar">
+              <span></span><span></span><span></span>
+            </div>
+            <pre class="term__body">$ curl https://ai.tagrider.com/v1/messages \
+  -H "Authorization: Bearer sk-..." \
+  -d '{"model":"gpt-5.5", ...}'
+HTTP 200 ✓</pre>
+          </div>
+          <span class="visual__caption">48 hours · zero to production · two buyers</span>
+        </div>
+      </article>
+
+      <!-- PROJECT 4: tagrider.com landing -->
+      <article class="proj proj--04">
+        <div class="proj__meta">
+          <span class="proj__num">/ 04</span>
+          <span class="proj__year">2026</span>
+        </div>
+        <div class="proj__body">
+          <h3 class="proj__title">tagrider.com — landing.</h3>
+          <p class="proj__lede">
+            Editorial marketing site for the TagRides product. Brand system from scratch.
+          </p>
+          <p class="proj__detail">
+            Next.js 16 + Tailwind 4 + Motion. A complete brand system —
+            mark, lockup, colour tokens, type scale — codified in
+            <em>BRAND.md</em> and reproduced verbatim from the Flutter
+            theme so the marketing site and app feel like one product.
+            Departure-board ticker for driver cards. Animated route
+            diagrams. Lighthouse 90+ on mobile.
+          </p>
+          <ul class="proj__stack">
+            <li>Next.js 16</li><li>React 19</li><li>Tailwind 4</li>
+            <li>Motion v12</li><li>Lottie</li><li>ECharts-GL</li>
+            <li>Cobe</li>
+          </ul>
+        </div>
+        <div class="proj__visual" data-visual="04">
+          <div class="visual__layout" aria-hidden="true">
+            <div class="layout__row"></div>
+            <div class="layout__row layout__row--half"></div>
+            <div class="layout__row"></div>
+            <div class="layout__row layout__row--quarter"></div>
+          </div>
+          <span class="visual__caption">Brand system → product surface, in days</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ STACK ============ -->
+    <section class="stack" id="stack">
+      <div class="stack__inner">
+        <span class="eyebrow">
+          <span class="eyebrow__num">03</span>
+          <span class="eyebrow__label">The stack</span>
+        </span>
+
+        <h2 class="stack__heading">
+          Languages others <em>list</em>. Tools I actually <em>reach for</em>. Systems I think in.
+        </h2>
+
+        <div class="stack__grid">
+          <div class="stack__col">
+            <h4 class="stack__col-title">Languages</h4>
+            <ul>
+              <li>Go (primary backend)</li>
+              <li>Dart / Flutter</li>
+              <li>TypeScript / JavaScript</li>
+              <li>Python (data, tooling)</li>
+              <li>SQL (heavy)</li>
+              <li>Bash</li>
+            </ul>
+          </div>
+          <div class="stack__col">
+            <h4 class="stack__col-title">Backend / infra</h4>
+            <ul>
+              <li>Fiber, gRPC, REST</li>
+              <li>Kafka, RabbitMQ, MQTT (EMQX)</li>
+              <li>Postgres, PostGIS, GORM, pgx</li>
+              <li>Redis, Tile38</li>
+              <li>Kong gateway</li>
+              <li>Docker Compose, systemd</li>
+              <li>Nginx, Let's Encrypt</li>
+            </ul>
+          </div>
+          <div class="stack__col">
+            <h4 class="stack__col-title">Mobile / web</h4>
+            <ul>
+              <li>Flutter (clean architecture, BLoC)</li>
+              <li>Next.js 14 / 15 / 16</li>
+              <li>React 19</li>
+              <li>Tailwind 3 / 4</li>
+              <li>Motion / Framer Motion</li>
+              <li>Three.js, GSAP, Lenis</li>
+            </ul>
+          </div>
+          <div class="stack__col">
+            <h4 class="stack__col-title">Integrations</h4>
+            <ul>
+              <li>Paystack, Stripe</li>
+              <li>Twilio, Mailgun, Firebase</li>
+              <li>Google Maps, OSRM, Valhalla</li>
+              <li>Cloudinary</li>
+              <li>OpenAI / Anthropic / Azure AI Foundry</li>
+              <li>LiteLLM</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="contact__inner">
+        <span class="eyebrow">
+          <span class="eyebrow__num">04</span>
+          <span class="eyebrow__label">Work with me</span>
+        </span>
+
+        <h2 class="contact__heading">
+          Got something hard you need shipped
+          <em>this month</em>?
+        </h2>
+
+        <p class="contact__lede">
+          Best fit: backend systems, real-time platforms, Flutter apps,
+          internal tools, marketing landing pages. Lagos-based, fully
+          remote. Available for full project ownership or focused sprints.
+        </p>
+
+        <div class="contact__channels">
+          <a href="mailto:oniya.olaiya@tagrider.com" class="channel">
+            <span class="channel__label">Email</span>
+            <span class="channel__value">oniya.olaiya@tagrider.com</span>
+          </a>
+          <a href="https://github.com/OlaiyaO" target="_blank" rel="noopener" class="channel">
+            <span class="channel__label">GitHub</span>
+            <span class="channel__value">github.com/OlaiyaO</span>
+          </a>
+          <a href="https://www.linkedin.com/in/oniya-joseph-3721b9186/" target="_blank" rel="noopener" class="channel">
+            <span class="channel__label">LinkedIn</span>
+            <span class="channel__value">linkedin/oniya-joseph</span>
+          </a>
+          <a href="https://tagrider.com" target="_blank" rel="noopener" class="channel">
+            <span class="channel__label">Building</span>
+            <span class="channel__value">tagrider.com</span>
+          </a>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="footer__col">
+          <span class="footer__label">© 2026 Olaiya Joseph Oniya</span>
+          <span class="footer__label">Built in Lagos, Nigeria</span>
+        </div>
+        <div class="footer__col">
+          <span class="footer__label">No frameworks were unnecessarily harmed in the making of this page.</span>
+        </div>
+      </footer>
+    </section>
+
+    <!-- ============ STICKY CTA — appears post-hero, hides over contact ============ -->
+    <a href="#contact" class="sticky-cta" aria-label="Hire me — jump to contact">
+      <span class="sticky-cta__pulse" aria-hidden="true"></span>
+      <span class="sticky-cta__text">
+        <span class="sticky-cta__label">Available now</span>
+        <span class="sticky-cta__line">Hire me <span aria-hidden="true">→</span></span>
+      </span>
+    </a>
+
+    <script src="/js/main.js?v=6"></script>
+  </body>
+</html>
